@@ -86,7 +86,7 @@ module.exports.getAccessToken = async (event) => {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify(token)
+        body: JSON.stringify(token),
       };
     })
     .catch((err) => {
