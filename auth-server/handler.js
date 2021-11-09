@@ -25,7 +25,7 @@ const credentials = {
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   
   redirect_uris: ["https://farizhaam.github.io/meet/"],
-  javascript_origins: ["https://farizhaam.github.io", "http://localhost:3000"]
+  javascript_origins: ["https://farizhaam.github.io", "http://localhost:3000"],
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
@@ -56,7 +56,7 @@ module.exports.getAuthURL = async () => {
       "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({
-      authUrl: authUrl
+      authUrl: authUrl,
     }),
   };
 };
@@ -95,7 +95,7 @@ module.exports.getAccessToken = async (event) => {
       console.error(err);
       return {
         statusCode: 500,
-        body: JSON.stringify(err)
+        body: JSON.stringify(err),
       };
     });
 };
