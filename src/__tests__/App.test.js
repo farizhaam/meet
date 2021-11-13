@@ -2,10 +2,23 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
+import CitySearch from '../CitySearch';
 
 describe('<App /> component', () => {
+    
+    let AppWrapper;
+    beforeAll(() => {
+        AppWrapper = shallow(<App />);
+    });
+
+    //test for rendering list of events
     test('render list of events', () => {
-        const AppWrapper = shallow(<App />);
         expect(AppWrapper.find(EventList)).toHaveLength(1);
     });
+
+    //test for rendering CitySearch
+    test('render CitySearch', () => {
+        expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+    });
+
 });
