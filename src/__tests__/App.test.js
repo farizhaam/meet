@@ -89,4 +89,12 @@ describe('<App /> integration', () => {
         expect(AppWrapper.state('events')).toEqual(allEvents);
         AppWrapper.unmount();
     });
+
+    test('App passes NumberOfEvents state to 32', () => {
+        const AppWrapper = mount(<App />);
+        const NumberOfEventsState = AppWrapper.state(32);
+        expect(NumberOfEventsState).not.toEqual(undefined);
+        expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(NumberOfEventsState);
+        AppWrapper.unmount();        
+    })
 });
