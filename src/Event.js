@@ -4,23 +4,16 @@ import {Collapse} from 'react-bootstrap';
 
 class Event extends Component {
     
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            collapsed: true
-        };
-    
-        this.handleClick = this.handleClick.bind(this);
-    }
+    state = {
+        collapsed: true,
+    };
 
-
-    handleClick(e) {
-        // e.preventDefault();
-
-        this.setState({
-            collapsed: !this.state.collapsed,
-        });
+   handleClick = () => {
+      if (this.state.collapsed === true) {
+          this.setState({ collapsed: false });
+        } else {
+            this.setState({ collapsed: true});
+        }
     };
 
     render() {
@@ -40,13 +33,16 @@ class Event extends Component {
             <Button variant="primary" className="toggle-details" onClick={this.handleClick}>
                 Toggle details
             </Button>
-            <Collapse in={!this.state.collapsed}>
+            {this.state.collapsed === false && (
+                    <p className="eventDetails">{event.description}</p>
+            )}
+            {/* <Collapse in={this.state.collapsed === false}>
                 <div className="info-details">
                     <p className="event-description">
                         {event.description}
                     </p>
                 </div>
-            </Collapse>
+            </Collapse> */}
         </div>
     
         );
