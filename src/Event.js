@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Button} from 'react-bootstrap';
-import {Collapse} from 'react-bootstrap';
+
 
 class Event extends Component {
     
@@ -8,12 +8,12 @@ class Event extends Component {
         collapsed: true,
     };
 
-   handleClick = () => {
-      if (this.state.collapsed === true) {
-          this.setState({ collapsed: false });
-        } else {
-            this.setState({ collapsed: true});
-        }
+    handleClick = () => {
+        if (this.state.collapsed === true) {
+            this.setState({ collapsed: false });
+            } else {
+                this.setState({ collapsed: true});
+            }
     };
 
     render() {
@@ -34,15 +34,9 @@ class Event extends Component {
                 Toggle details
             </Button>
             {this.state.collapsed === false && (
-                    <p className="eventDetails">{event.description}</p>
+                    <p className="info-details">{event.description}</p>
             )}
-            {/* <Collapse in={this.state.collapsed === false}>
-                <div className="info-details">
-                    <p className="event-description">
-                        {event.description}
-                    </p>
-                </div>
-            </Collapse> */}
+
         </div>
     
         );
