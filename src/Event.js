@@ -8,7 +8,7 @@ class Event extends Component {
         super(props);
     
         this.state = {
-            collapsed: false
+            collapsed: true
         };
     
         this.handleClick = this.handleClick.bind(this);
