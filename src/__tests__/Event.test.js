@@ -47,7 +47,6 @@ describe('<Event /> component', () => {
         EventWrapper.setState({
             collapsed: false,
         });
-        EventWrapper.find(".toggle-details").simulate("click");
-        expect(EventWrapper.state("collapsed")).toBe(true);
+        expect(EventWrapper.find(".info-details")).toHaveLength(1);
     });
 });
