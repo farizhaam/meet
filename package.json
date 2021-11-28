@@ -2,11 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": ".",
-=======
-  "homepage": "https://farizhaam.github.io/meet/",
->>>>>>> parent of 8354de5 (Update package.json)
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
