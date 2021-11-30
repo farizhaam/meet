@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { InfoAlert } from './Alert';
+import {InfoAlert} from './Alert';
 
 class CitySearch extends Component {
     
@@ -19,9 +19,9 @@ class CitySearch extends Component {
         if (suggestions.length === 0) {
             this.setState({
                 query: value,
-                infoText: 'We cannot find the city you are looking for. Please try another city.',
+                infoText: 'We cannot find the city you are looking for. Please try another city',
             });
-        }else {
+        } else {
             return this.setState({
                 query: value,
                 suggestions: [],
