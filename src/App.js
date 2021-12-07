@@ -16,6 +16,7 @@ class App extends Component {
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
+      console.log(events); //to verify that events is not undefined
       if(this.mounted) {
         this.setState({events, locations: extractLocations(events)});
       }
