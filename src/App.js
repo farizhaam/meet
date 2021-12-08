@@ -13,6 +13,8 @@ class App extends Component {
     numberOfEvents: 32
   }
 
+
+
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -54,9 +56,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="app-title">Meet App</h1><br/>
+        
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-        <EventList events={this.state.events}/>
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsNumber={this.updateEventsNumber}/>
+        <EventList events={this.state.events}/>
+
       </div>
     );
   }
