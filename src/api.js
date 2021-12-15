@@ -12,7 +12,7 @@ import { mockData } from "./mock-data";
 import './nprogress.css';
 
 //defining checkToken to check for a token
-const checkToken = async (accessToken) => {
+export const checkToken = async (accessToken) => {
     const result = await fetch(
         `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
     )
@@ -61,6 +61,12 @@ export const getEvents = async () => {
 
     if (window.location.href.startsWith('http://localhost')) {
         return mockData;
+    }
+    
+    if (!navigator.onLine) {
+        const data = localStorage.getItem("lastEvents");
+        NProgress.done();
+        return data?JSON.parse(events).events:[];;
     }
 
     const token = await getAccessToken();
