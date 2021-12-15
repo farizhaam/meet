@@ -4,27 +4,9 @@ import { Button} from 'react-bootstrap';
 
 class Event extends Component {
     
-<<<<<<< HEAD
     state = {
         collapsed: true,
     };
-=======
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-            collapsed: true
-        };
-    
-        this.handleClick = this.handleClick.bind(this);
-    }
-    //   state = {
-    //     collapsed: true,
-    // };
-
-    handleClick(e) {
-        // e.preventDefault();
->>>>>>> parent of 6af30af (toggle details not working)
 
     handleClick = () => {
         if (this.state.collapsed === true) {
