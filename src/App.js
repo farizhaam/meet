@@ -3,14 +3,16 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import {getEvents, extractLocations} from './api';
+import WelcomeScreen from './WelcomeScreen';
+import {getEvents, extractLocations, checkToken, getAccessToken} from './api';
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
     currentLocation: "all",
-    numberOfEvents: 32
+    numberOfEvents: 32, 
+    showWelcomeScreen: undefined
   }
 
   componentDidMount() {
