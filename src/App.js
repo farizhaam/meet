@@ -28,14 +28,14 @@ class App extends Component {
         if (this.mounted) { 
           this.setState({events, locations: extractLocations(events)}); 
         } 
-        // if (!navigator.onLine) {
-        //   this.setState({
-        //     warningText: 'Network error, the events you are viewing may be out of date. To make sure you are viewing the latest information, make sure you are connected to the internet'
-        //   });
-        //   console.log("offline mode");
-        // } else {
-        //   this.setState({ warningText: '' });
-        // };
+        if (!navigator.onLine) {
+          this.setState({
+            warningText: 'Network error, the events you are viewing may be out of date. To make sure you are viewing the latest information, make sure you are connected to the internet'
+          });
+          console.log("offline mode");
+        } else {
+          this.setState({ warningText: '' });
+        };
       }); 
     } 
   }
@@ -79,7 +79,7 @@ class App extends Component {
         <p className="event-numbers">Number of events to display</p>
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsNumber={this.updateEventsNumber}/>
         <EventList events={this.state.events}/>
-        {/* <WarningAlert text={this.state.warningText} /> */}
+        <WarningAlert text={this.state.warningText} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}}/>
       </div>
     );
