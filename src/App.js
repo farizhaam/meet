@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import {WarningAlert} from './Alert';
 import WelcomeScreen from './WelcomeScreen';
 import {getEvents, extractLocations, checkToken, getAccessToken} from './api';
 
@@ -27,6 +28,14 @@ class App extends Component {
         if (this.mounted) { 
           this.setState({events, locations: extractLocations(events)}); 
         } 
+        if (!navigator.onLine) {
+          this.setState({
+            warningText: <div className="networkNotification">'Network error, the events you are viewing may be out of date. To make sure you are viewing the latest information, make sure you are connected to the internet'</div>
+          });
+          console.log("offline mode");
+        } else {
+          this.setState({ warningText: '' });
+        };
       }); 
     } 
   }
@@ -70,6 +79,7 @@ class App extends Component {
         <p className="event-numbers">Number of events to display</p>
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsNumber={this.updateEventsNumber}/>
         <EventList events={this.state.events}/>
+        <WarningAlert text={this.state.warningText} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}}/>
       </div>
     );
