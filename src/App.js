@@ -30,7 +30,7 @@ class App extends Component {
         } 
         if (!navigator.onLine) {
           this.setState({
-            warningText: <div className="networkNotification">'Network error, the events you are viewing may be out of date. To make sure you are viewing the latest information, make sure you are connected to the internet'</div>
+            warningText: 'Network error, the events you are viewing may be out of date. To make sure you are viewing the latest information, make sure you are connected to the internet'
           });
           console.log("offline mode");
         } else {
