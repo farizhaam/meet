@@ -17,6 +17,15 @@ class App extends Component {
     showWelcomeScreen: undefined
   }
 
+  // componentDidMount() {
+  //   this.mounted = true;
+  //   getEvents().then((events) => {
+  //     if(this.mounted) {
+  //       this.setState({events, locations: extractLocations(events)});
+  //     }
+  //   });
+  // }
+
   async componentDidMount() { 
     this.mounted = true; 
     const accessToken = localStorage.getItem('access_token'); 
