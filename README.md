@@ -3,6 +3,9 @@
 ## Description
 Meet App is a meet-up application and built as a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
+## Live Site
+Availabale on GitHub Pages: https://farizhaam.github.io/meet/
+
 ## Key Features
 - Filter events by city.
 - Show/hide event details.
