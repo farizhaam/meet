@@ -4,7 +4,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import EventGenre from './EventGenre';
+// import EventGenre from './EventGenre';
 import WelcomeScreen from './WelcomeScreen';
 import {WarningAlert} from './Alert';
 import {getEvents, extractLocations, checkToken, getAccessToken} from './api';
@@ -102,7 +102,7 @@ class App extends Component {
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsNumber={this.updateEventsNumber}/>
         <div className="data-vis-wrapper">
           
-          <EventGenre events={this.state.events}/>
+          {/* <EventGenre events={this.state.events}/> */}
           <ResponsiveContainer height={400} >
             <h4>Events in each city</h4>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
